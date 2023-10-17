@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Murilo Vitorino Tavares">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Sistema de Análise de Minúcias</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                    <img alt="Brand" src="img/logo-icon.png" width="50" />
+                </div>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item"><a href="index.html">Home</a></li>
+                        <li class="nav-item"><a href="viewManage.html">Gestão da Pesquisa</a></li>
+                        <li class="nav-item active"><a href="viewAnalysis.html">Executar Análise</a></li>
+                    </ul>
+                    <button type="button" class="btn btn-info navbar-btn pull-right">Entrar</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="page-header">
+            <h1>Análise da Pesquisa</h1>
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-md-6 deletePadding-md">
+            <div class="tamanhoDefinidoColuna-md5 deletePadding-md col-md-5">
+                <div class="col-md-1 fileContainerImg text-center">
+                    <label>
+                        <i class="material-icons">add_a_photo</i>
+                        <input class="input-group" type="file" id="imgInp">
+                    </label>
+                </div>
+                <button id="botaoMostrarEixo" type="button" data-nome="" data-forma="" data-cor="" class="btn btn-defaut hidden" title="">Mostrar Eixo</button>
+                <button id="botaoOcultarEixo" type="button" data-nome="" data-forma="" data-cor="" class="btn btn-default " title="">Ocultar Eixo</button>
+
+                <button id="botaoFixarCircunferencia" type="button" data-nome="" data-forma="" data-cor="" class="btn btn-default" title="">Fixar Circunferência</button>
+                <button id="eixo" type="button" data-nome="Eixo" data-forma="eixo" data-cor="#00D2FF" class="btn btn-primary" title="Eixo Central">Eixo</button>
+
+            </div>
+            <div class="tamanhoDefinidoColuna-md1 col-md-1">
+                <button id="excluir" data-forma="remove" class="btn btn-default btn-xs btnPadrao" disabled>
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+
+            </div>
+            <div class=" deleteMarginRow row">
+                <div id="container1" class="tamanhoDefinidoColuna-md5 adicionarImagem deletePadding-md col-md-5"></div>
+                <div class="tamanhoDefinidoColuna-md1 col-md-1">
+                    <button type="button" id="min1" data-nome="End (E)" data-forma="add" data-cor="#FFFF00" data-title="End (E)" class="btn btn-defaut btn-xs btnPadrao " disabled title="End (E)"><img class="imagemButton" src="botoesminucias/1_End_(E).png" /></button>
+                    <button id="min2" data-nome="Bifurc (B)" data-forma="add" data-cor="#0066FF" data-title="Bifurc (B)" class="btn btn-default btn-xs btnPadrao" disabled title="Bifurc (B)"><img class="imagemButton" src="botoesminucias/2_Bifurc_(B).png" /></button>
+                    <button id="min3" data-nome="Converg (C)" data-forma="add" data-cor="#FF0000" data-title="Converg (C)" class="btn btn-default btn-xs btnPadrao " disabled title="Converg (C)"><img class="imagemButton" src="botoesminucias/3 Converg (C).png" /></button>
+                    <button id="min4" data-nome="Fragm Big (F-BG)" data-forma="add" data-cor="#00FF00" data-title="Fragm Big (F-BG)" class="btn btn-default btn-xs btnPadrao" disabled title="Fragm Big (F-BG)"><img class="imagemButton" src="botoesminucias/4 Fragm Big  (F-BG).png" /></button>
+                    <button id="min5" data-nome="Fragm Small (F-SM)" data-forma="add" data-cor="#FF9933" data-title="Fragm Small (F-SM)" class="btn btn-default btn-xs btnPadrao" disabled title="Fragm Small (F-SM)"><img class="imagemButton" src="botoesminucias/5 Fragm Small  (F-SM).png" /></button>
+                    <button id="min6" data-nome="Break (BR)" data-forma="add" data-cor="#FF0000" data-title="Break (BR)" class="btn btn-default btn-xs btnPadrao" disabled title="Break (BR)"><img class="imagemButton" src="botoesminucias/6 Break (BR).png" /></button>
+                    <button id="min7" data-nome="Enclo big (EN-BG)" data-forma="add" data-cor="#CC99FF" data-title="Enclo big (EN-BG)" class="btn btn-default btn-xs btnPadrao" disabled title="Enclo big (EN-BG)"><img class="imagemButton" src="botoesminucias/7 Enclo big (EN-BG).png" /></button>
+                    <button id="min8" data-nome="Enclo small (EN-SM)" data-forma="add" data-cor="#99CCFF" data-title="Enclo small (EN-SM)" class="btn btn-default btn-xs btnPadrao" disabled title="Enclo small (EN-SM)"><img class="imagemButton" src="botoesminucias/8 Enclo small (EN-SM).png" /></button>
+                    <button id="min9" data-nome="Point between (P-BW)" data-forma="add" data-cor="#99FF66" data-title="Point between (P-BW)" class="btn btn-default btn-xs btnPadrao" disabled title="Point between (P-BW)"><img class="imagemButton" src="botoesminucias/9 Point between (P-BW).png" /></button>
+                    <button id="min10" data-nome="Point in ridge (P-IN)" data-forma="add" data-cor="#FFCC00" data-title="Point in ridge (P-IN)" class="btn btn-default btn-xs btnPadrao" disabled title="Point in ridge (P-IN)"><img class="imagemButton" src="botoesminucias/10 Point in ridge (P-IN).png" /></button>
+                    <button id="min11" data-nome="Overlap (O)" data-forma="add" data-cor="#33CCFF" data-title="Overlap (O)" class="btn btn-default btn-xs btnPadrao" disabled title="Overlap (O)"><img class="imagemButton" src="botoesminucias/11 Overlap (O).png" /></button>
+                    <button id="min12" data-nome="Crossbar (CR)" data-forma="add" data-cor="#9999FF" data-title="Crossbar (CR)" class="btn btn-default btn-xs btnPadrao" disabled title="Crossbar (CR)"><img class="imagemButton" src="botoesminucias/12 Crossbar (CR).png" /></button>
+                    <button id="min13" data-nome="Bridge (BD)" data-forma="add" data-cor="#99FFCC" data-title="Bridge (BD)" class="btn btn-default btn-xs btnPadrao" disabled title="Bridge (BD)"><img class="imagemButton" src="botoesminucias/13 Bridge (BD).png" /></button>
+                    <button id="min14" data-nome="Opposited Bif (OB)" data-forma="add" data-cor="#FFFFCC" data-title="Opposited Bif (OB)" class="btn btn-default btn-xs btnPadrao" disabled title="Opposited Bif (OB)"><img class="imagemButton" src="botoesminucias/14 Opposited Bif (OB).png" /></button>
+                    <button id="min15" data-nome="Dock (D)" data-forma="add" data-cor="#FFCC66" data-title="Dock (D)" class="btn btn-default btn-xs btnPadrao" disabled title="Dock (D)"><img class="imagemButton" src="botoesminucias/15 Dock (D).png" /></button>
+                    <button id="min16" data-nome="Trif B (TF-B)" data-forma="add" data-cor="#FF6666" data-title="Trif B (TF-B)" class="btn btn-default btn-xs btnPadrao" disabled title="Trif B (TF-B)"><img class="imagemButton" src="botoesminucias/16 Trif B (TF-B).png" /></button>
+                    <button id="min17" data-nome="Trif C (TF-C)" data-forma="add" data-cor="#CC3399" data-title="Trif C (TF-C)" class="btn btn-default btn-xs btnPadrao" disabled title="Trif C (TF-C)"><img class="imagemButton" src="botoesminucias/17 Trif C (TF-C).png" /></button>
+                    <button id="min18" data-nome="(M-B)" data-forma="add" data-cor="#00CC00" data-title="M-B" class="btn btn-default btn-xs btnPadrao" disabled title="M-B"><img class="imagemButton" src="botoesminucias/18 (M-B).png" /></button>
+                    <button id="min19" data-nome="(M-C)" data-forma="add" data-cor="#CCCC00" data-title="M-C" class="btn btn-default btn-xs btnPadrao" disabled title="M-C"><img class="imagemButton" src="botoesminucias/19 (M-C).png" /></button>
+                    <button id="min20" data-nome="Return (R)" data-forma="add" data-cor="#33CCFF" data-title="Return (R)" class="btn btn-default btn-xs btnPadrao" disabled title="Return (R)"><img class="imagemButton" src="botoesminucias/20 Return (R).png" /></button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="col-md-6 deletePadding-md floatRight">
+                <div class="addespacoentretabelas">
+                    <table class="table table-striped table-bordered">
+                        <thead id="tableTitle">
+                            <tr>
+                                <th class="tamanhoColMaior text-center" scope="col">Minúcia</th>
+                                <th class="tamanhoColIntermediario text-center" scope="col">Posição X</th>
+                                <th class="tamanhoColIntermediario text-center" scope="col">Posição Y</th>
+                                <th class="tamanhoColIntermediario text-center" scope="col">
+                                    Cartesiano
+                                    <button id="infoButtonCartesiano" type="button" class="btn btn-info btn-xs">
+                                        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                                    </button>
+                                    <div class="mostrarImgQuadrante" style=" display: none; z-index: 1; vertical-align: middle;">
+                                        <img src="img/quadrante.JPG" width="400" />
+                                    </div>
+                                </th>
+                                <th class="tamanhoColIntermediario text-center" scope="col">Classificação</th>
+                                <th class="tamanhoColMenor text-center" scope="col">ID</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        </tbody>
+                    </table>
+                </div>
+                <table class="table table-bordered ">
+                    <tr>
+                        <th class="table2col1" scope="col">Quantidade de Minúcias</th>
+                        <th id="inputQuantidadeMin"></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+            <div class="col-md-6 deletePadding-md floatLeft">
+                <div class="col-md-5 deletePadding-md">
+                    <label class="label-control" for="inputNomeArquivo">Nome do Arquivo:</label>
+                    <input class="form-control input-sm text-center" type="text" id="inputNomeArquivo" readonly>
+                </div>
+                <div class="col-md-1 deletePadding-md"></div>
+                <div class="col-md-5 deletePadding-md">
+                    <label class="label-control " for="inputArquivo">Dedo:</label>
+                    <span class="redAsterisco">*</span>
+                    <div class="groupProgram">
+                        <select class="form-control input-sm" id="selectDedo" name="Dedo">
+                            <option selected disabled value="0">Selecione o Dedo</option>
+                            <option value="1">Polegar Direito</option>
+                            <option value="2">Indicador Direito</option>
+                            <option value="3">Médio Direito</option>
+                            <option value="4">Anelar Direito</option>
+                            <option value="5">Mínimo Direito</option>
+                            <option value="6">Polegar Esquerdo</option>
+                            <option value="7">Indicador Esquerdo</option>
+                            <option value="8">Médio Esquerdo</option>
+                            <option value="9">Anelar Esquerdo</option>
+                            <option value="10">Mínimo Esquerdo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-5 deletePadding-md">
+                    <label class="label-control" for="inputArquivo">Tipo Fundamental:</label>
+                    <span class="redAsterisco">*</span>
+                    <div class="groupProgram">
+                        <select class="form-control input-sm" id="selectTipoFundamental" name="TipoFundamental">
+                            <option selected disabled value="">Selecione o Tipo Fundamental</option>
+                            <option value="Arco">Arco</option>
+                            <option value="Presilha Interna">Presilha Interna</option>
+                            <option value="Presilha Externa">Presilha Externa</option>
+                            <option value="Verticilo">Verticilo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-1 deletePadding-md"></div>
+                <div class="col-md-5 deletePadding-md">
+                    <label class="label-control" for="inputCentro">Raio Eixo:</label>
+                    <input class="form-control input-sm text-center" type="text" id="inputRaioEixo" readonly>
+                </div>
+                <div class="col-md-5 deletePadding-md">
+                    <label class="label-control" for="inputCentroEixoX">Centro Eixo X:</label>
+                    <input class="form-control input-sm text-center" type="text" id="inputCentroEixoX" readonly>
+                </div>
+                <div class="col-md-1 deletePadding-md"></div>
+                <div class="col-md-5 deletePadding-md">
+                    <label class="label-control" for="inputCentroEixoY">Centro Eixo Y:</label>
+                    <input class="form-control input-sm text-center" type="text" id="inputCentroEixoY" readonly>
+                </div>
+            </div>
+        
+    </div>
+    <footer id="footer">
+        <p id="textoRodape"><strong>2021 - Sistema de Análise de Minúcias (SAM)</strong></p>
+    </footer>
+</body>
+
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://unpkg.com/konva@4.0.0/konva.min.js"></script>
+<script src="https://unpkg.com/konva@8.0.1/konva.min.js"></script>
+
+<script charset="utf-8" language="javascript" type="text/javascript" src="js/planoCartesiano.js"></script>
+<script charset="utf-8" language="javascript" type="text/javascript" src="js/DesenharTabela.js"></script>
+
+<script charset="utf-8" language="javascript" type="text/javascript" src="js/ClassificarPorQuadrante.js"></script>
+<script charset="utf-8" language="javascript" type="text/javascript" src="js/ClassificarPorDigital.js"></script>
+
+<script charset="utf-8" language="javascript" type="text/javascript" src="js/DesenharEixo.js"></script>
+
+<script>
+
+    var countremove = 0;
+
+    var width = 512;
+    var height = 512;
+    var layer1 = new Konva.Layer();
+    var Cor;
+    var Tipo;
+    var Forma;
+    let array = [];
+    var Raio;
+    var row = 0;
+    var CentroCircuX = 0;
+    var CentroCircuY = 0;
+    var Cartesiano;
+
+    var countMin = 0;
+    var Cartesiano1;
+
+    var distancia = 0;
+    var arrayb = [];
+    var arrayc = [];
+    var raio = 150;
+
+    
+
+    var inputNomeArquivo = document.querySelector("#inputNomeArquivo");
+    var inputQuantidadeMin = document.querySelector("#inputQuantidadeMin");
+
+    inputQuantidadeMin.innerHTML = countMin;
+
+    var mensagem = "Os campos obrigatórios devem ser preenchidos!";
+
+    var group = new Konva.Group({
+        x: 255,
+        y: 255,
+        rotation: 0,
+        scale: 1,
+    });
+
+    $("#imgInp").change(function () {
+        var stage = new Konva.Stage({
+            container: 'container1',
+            width: 512,
+            height: 512,
+        });
+
+        var imageObj = new Image();
+        imageObj.onload = function () {
+            var imagem = new Konva.Image({
+                x: 0,
+                y: 0,
+                image: imageObj,
+                width: 512,
+                height: 512,
+                scaleX: 1,
+                scaleY: 1,
+            });
+            layer1.add(imagem);
+            layer1.batchDraw();
+        };
+
+        file = $("#imgInp").val();
+        file = file.split(/(\\|\/)/g).pop();
+        imageObj.src = './' + file;
+        stage.add(layer1);
+
+        inputNomeArquivo.value = file;
+
+
+        var formaEixo = new Konva.Circle({
+            x: 0,
+            y: 0,
+            fill: "lightblue",
+            stroke: "blue",
+            radius: raio,
+            strokeWidth: 2,
+            opacity: 0.4,
+            draggable: true,
+
+        })
+
+        var eixo = document.querySelector("#eixo");
+        eixo.addEventListener("click", function () { DesenharEixo(stage, formaEixo, group, mensagem) });
+
+        $(".btnPadrao").off("click").on("click", function () {
+
+            $(".btnPadrao").prop("disabled", false);
+            $(this).prop("disabled", true);
+            var cor = $(this).data("cor");
+            var forma = $(this).data("forma");
+            var tipo = $(this).data("title");
+
+            layer1.add(group);
+
+            Cor = cor;
+            Forma = forma;
+            Tipo = tipo;
+
+            if (Forma == "add") {
+                //console.log(Forma);
+                stage.off("click").on('click', function () {
+                    var pos = formaEixo.getRelativePointerPosition();
+                    var shape = new Konva.Rect({
+                        width: 12,
+                        height: 12,
+                        x: pos.x + CentroCircuX - 6,
+                        y: pos.y - CentroCircuY - 6,
+                        fill: "transparent",
+                        stroke: Cor,
+                        strokeWidth: 2,
+                    })
+
+                    var posx = (pos.x);
+                    var posy = -(pos.y);
+                    //console.log(shape._id);
+                    array.push([Tipo, posx, posy, shape, row]);
+                    //for (var j = 0; j < array.length; j++) {
+                    //    console.log(array[j][4]);                                             
+                    //}  
+
+                    //array.pop();
+
+                    group.add(shape);
+                    ClassificarPorQuadrante();
+                    ClassificarPorDigital();
+                    DesenharTabela();
+
+                })
+            }
+
+            else if (Forma == "remove1") {
+                console.table(array);
+                console.log(array[0].indexOf(0));
+            
+
+
+
+
+
+                //stage.off("click").on('click', function () {
+                //    var pos = formaEixo.getRelativePointerPosition();
+                //    var shape = new Konva.Rect({
+                //        width: 12,
+                //        height: 12,
+                //        x: pos.x + CentroCircuX - 6,
+                //        y: pos.y - CentroCircuY - 6,
+                //        fill: "transparent",
+                //        stroke: Cor,
+                //        strokeWidth: 2,
+                //    })
+
+                //    var posx = (pos.x);
+                //    var posy = -(pos.y);
+                //    //console.log(shape._id);
+                //    array.push([Tipo, posx, posy, shape, row]);
+                //    //for (var j = 0; j < array.length; j++) {
+                //    //    console.log(array[j][4]);                                             
+                //    //}  
+
+                //    //array.pop();
+
+                //    group.add(shape);
+
+                //    console.table(array);
+
+                //    ClassificarPorQuadrante();
+                //    ClassificarPorDigital();
+                //    DesenharTabela();
+
+                //})
+            }
+
+            else {
+                stage.off("click");
+
+                for (var i = 0; i < array.length; i++) {
+
+                        (array[i][3]).off("click").on("click", function () {
+                            for (var j = 0; j < array.length; j++) {
+                                //console.log(array[j][3]);
+                                //console.log(j);
+                                if (array[j][3] == this) {                               
+                                    arrayb.push(array[j]);                                    
+                                    
+                                    countremove++;
+                                }                           
+                                
+                            }
+
+
+                            var id = this._id;
+                            var id1 = "#id" + id;
+                            //console.log(id1);
+                            var x = document.querySelector(id1);
+                            // console.log(x);
+                            //console.log(array[i][3]);
+                            x.remove();
+                            this.remove();
+                            
+                            i--;
+                            //console.table(array);
+                            layer1.draw();
+
+
+                            countMin--;
+                            var thClass = document.querySelector("#inputQuantidadeMin");
+                            thClass.innerHTML = countMin;
+                            
+                            
+                        })
+                        //console.log(array[i][4]);
+                        
+
+
+                }
+                
+                
+            }
+        })
+
+    })
+    
+    
+   
+    
+
+</script>
